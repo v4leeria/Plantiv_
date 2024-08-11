@@ -34,7 +34,7 @@ textarea::placeholder {
 
 @media (max-width: 576px) {
   .ContainerPublish {
-    padding: 0.3rem;
+    padding: 2rem;
     margin: 1rem auto; /* Ajusta el margen en dispositivos móviles */
   }
 
