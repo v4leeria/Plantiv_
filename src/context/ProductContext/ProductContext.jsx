@@ -11,10 +11,7 @@ const ProductProvider = ({ children }) => {
       const response = await axios.get("/store/products");
       setProducts(response.data);
     } catch (error) {
-      console.error(
-        "Error en buscar los productos:",
-        error.response ? error.response.data : error
-      );
+      console.error("Error en buscar los productos:", error);
     }
   };
 
@@ -23,10 +20,7 @@ const ProductProvider = ({ children }) => {
       const response = await axios.post("/store/products", product);
       setProducts([...products, response.data]);
     } catch (error) {
-      console.error(
-        "Error al agregar un producto",
-        error.response ? error.response.data : error
-      );
+      console.error("Error al agregar un producto", error);
       throw error;
     }
   };
