@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../context/ProductContext/ProductContext";
 import "./Publish.css";
 
+//-----------Publish modificado
 const Publish = () => {
   const { addProduct } = useProducts();
   const [product, setProduct] = useState({
