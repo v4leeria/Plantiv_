@@ -41,12 +41,22 @@ const UserProvider = ({ children }) => {
   const login = async (userData) => {
     try {
       const response = await axios.post("/auth/login", userData);
-      localStorage.setItem("token", response.data.token);
-      const userResponse = await axios.get("/auth/me", {
-        headers: { Authorization: `Bearer ${response.data.token}` },
-      });
-      setUser({ ...userResponse.data, token: response.data.token });
-      navigate("/profile");
+      console.log("Login Response:", response);
+
+      if (response && response.data) {
+        localStorage.setItem("token", response.data.token);
+
+        const userResponse = await axios.get("/auth/me", {
+          headers: { Authorization: `Bearer ${response.data.token}` },
+        });
+
+        setUser({ ...userResponse.data, token: response.data.token });
+        navigate("/profile");
+      } else {
+        throw new Error(
+          "No se recibió la respuesta esperada al iniciar sesión"
+        );
+      }
     } catch (error) {
       console.error("Error al iniciar sesión:", error);
     }

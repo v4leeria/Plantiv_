@@ -10,7 +10,7 @@ const CartProvider = ({ children }) => {
     try {
       const token = localStorage.getItem("token");
       console.log("Token enviado:", token);
-      const response = await axios.get("/store/cart", {
+      const response = await axios.get("/store/cart", console.log(response), {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("Cart Response data:", response.data);
