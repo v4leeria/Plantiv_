@@ -40,7 +40,7 @@ const Cart = () => {
       </ListGroup>
       {cartItems.length > 0 && (
         <div className="cart-total">
-          <h4>Total: ${totalAmount.toFixed(2)}</h4>
+          <h4>Total: ${totalAmount}</h4>
         </div>
       )}
     </div>
