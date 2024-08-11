@@ -10,8 +10,6 @@ const Cart = () => {
     return total + parseFloat(item.price) * item.quantity;
   }, 0);
 
-  const formatPrice = (price) => parseFloat(price).toFixed(0);
-
   return (
     <div className="cart-container">
       <h1 className="cart-title">Carrito de Compras</h1>
@@ -23,7 +21,7 @@ const Cart = () => {
                 <Image src={item.imgplanta} rounded width={50} height={50} />
                 <div className="cart-item-details">
                   <h5>{item.name}</h5>
-                  <p>Precio: ${formatPrice(item.price)}</p>
+                  <p>Precio: ${item.price}</p>
                   <p>Cantidad: {item.quantity}</p>
                 </div>
               </div>
@@ -42,7 +40,7 @@ const Cart = () => {
       </ListGroup>
       {cartItems.length > 0 && (
         <div className="cart-total">
-          <h4>Total: ${formatPrice(totalAmount)}</h4>
+          <h4>Total: ${totalAmount.toFixed(2)}</h4>
         </div>
       )}
     </div>
