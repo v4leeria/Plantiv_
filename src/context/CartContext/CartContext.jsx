@@ -9,12 +9,15 @@ const CartProvider = ({ children }) => {
   const fetchCartItems = async () => {
     try {
       const response = await axios.get("/store/cart");
-      console.log("Response data:", response.data);
+      console.log("Cart Response data:", response.data);
       if (Array.isArray(response.data)) {
         setCartItems(response.data);
       }
     } catch (error) {
-      console.error("Error fetching cart items", error);
+      console.error(
+        "Error fetching cart items",
+        error.response ? error.response.data : error
+      );
     }
   };
 
