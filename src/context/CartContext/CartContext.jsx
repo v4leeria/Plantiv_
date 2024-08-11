@@ -18,10 +18,7 @@ const CartProvider = ({ children }) => {
         setCartItems(response.data);
       }
     } catch (error) {
-      console.error(
-        "Error fetching cart items",
-        error.response ? error.response.data : error
-      );
+      console.error("Error fetching cart items", error);
     }
   };
 
