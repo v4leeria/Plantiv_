@@ -10,6 +10,10 @@ const Cart = () => {
     return total + parseFloat(item.price) * item.quantity;
   }, 0);
 
+  const handleCheckout = () => {
+    alert("Pedido realizado");
+  };
+
   return (
     <div className="cart-container">
       <h1 className="cart-title">Carrito de Compras</h1>
@@ -41,6 +45,9 @@ const Cart = () => {
       {cartItems.length > 0 && (
         <div className="cart-total">
           <h4>Total: ${totalAmount}</h4>
+          <Button variant="success" onClick={handleCheckout}>
+            Realizar Pedido
+          </Button>
         </div>
       )}
     </div>
