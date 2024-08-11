@@ -24,7 +24,15 @@ const CartProvider = ({ children }) => {
 
   const addToCart = async (productId, quantity) => {
     try {
-      const response = await axios.post("/store/cart", { productId, quantity });
+      const response = await axios.post(
+        "/store/cart",
+        { productId, quantity },
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       console.log("Added to cart:", response.data);
       fetchCartItems(); // Actualiza el carrito después de agregar un producto
     } catch (error) {
@@ -34,7 +42,11 @@ const CartProvider = ({ children }) => {
 
   const removeFromCart = async (productId) => {
     try {
-      await axios.delete(`/store/cart/${productId}`);
+      await axios.delete(`/store/cart/${productId}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       console.log("Removed from cart:", productId);
       fetchCartItems(); // Actualiza el carrito después de eliminar un producto
     } catch (error) {

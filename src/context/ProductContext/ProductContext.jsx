@@ -21,7 +21,11 @@ const ProductProvider = ({ children }) => {
 
   const addProduct = async (product) => {
     try {
-      const response = await axios.post("/store/products", product);
+      const response = await axios.post("/store/products", product, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       setProducts([...products, response.data]);
     } catch (error) {
       console.error("Error al agregar un producto", error);
