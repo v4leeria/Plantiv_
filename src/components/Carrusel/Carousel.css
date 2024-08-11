@@ -1,10 +1,24 @@
-.img {
-  width: 50%;
+.carousel {
+  width: 70%; /* Ajusta el ancho del carrusel según lo necesites */
+  margin: 0 auto; /* Centra el carrusel horizontalmente */
   border-radius: 2rem;
+  display: flex;
+  flex-direction: column; /* Alinea los elementos verticalmente */
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center;
+}
+
+img {
+  border-radius: 2rem;
+  max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+  height: auto;
 }
 
 @media (max-width: 768px) {
-  .img {
-    width: 70%;
+  .carousel {
+    width: 90%; /* Ajusta el ancho para pantallas más pequeñas */
+  }
+  img {
+    width: 100%; /* Ajusta el ancho de la imagen para pantallas más pequeñas */
   }
 }

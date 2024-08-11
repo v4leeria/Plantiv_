@@ -13,7 +13,7 @@ function NavbarPlantiv() {
       <Container className="containerNavbar">
         <Navbar.Brand as={NavLink} to="/" style={{ color: "black" }}>
           <img
-            src="../../src/assets/img/Plantiv.png"
+            src="https://i.pinimg.com/originals/48/a1/5c/48a15cf0d6d3ab2b944c6ba6ee0759d8.png"
             alt="Plantiv"
             style={{ width: "100px" }}
           />

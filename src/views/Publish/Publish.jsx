@@ -12,6 +12,7 @@ const Publish = () => {
     price: "",
     stock: "",
     imgplanta: "",
+    userId: "",
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
