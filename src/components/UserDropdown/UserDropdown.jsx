@@ -23,7 +23,7 @@ const UserDropdown = ({ logout }) => {
         <LinkContainer to="/profile">
           <DropdownItem>Mi Perfil</DropdownItem>
         </LinkContainer>
-        <Dropdown.Item onClick={logout}>Logout</Dropdown.Item>{" "}
+        <Dropdown.Item onClick={logout}>Salir</Dropdown.Item>{" "}
       </DropdownMenu>
     </Dropdown>
   );
