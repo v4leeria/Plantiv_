@@ -16,6 +16,11 @@ const CartProvider = ({ children }) => {
       console.log("Cart Response data:", response.data);
       if (Array.isArray(response.data)) {
         setCartItems(response.data);
+      } else {
+        console.error(
+          "La respuesta del carrito no es un array:",
+          response.data
+        );
       }
     } catch (error) {
       console.error("Error fetching cart items", error);
