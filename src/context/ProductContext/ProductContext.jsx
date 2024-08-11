@@ -8,7 +8,11 @@ const ProductProvider = ({ children }) => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("/store/products");
+      const token = localStorage.getItem("token");
+      console.log("Token enviado:", token);
+      const response = await axios.get("/store/products", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       setProducts(response.data);
     } catch (error) {
       console.error("Error en buscar los productos:", error);

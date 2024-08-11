@@ -8,7 +8,11 @@ const CartProvider = ({ children }) => {
 
   const fetchCartItems = async () => {
     try {
-      const response = await axios.get("/store/cart");
+      const token = localStorage.getItem("token");
+      console.log("Token enviado:", token);
+      const response = await axios.get("/store/cart", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       console.log("Cart Response data:", response.data);
       if (Array.isArray(response.data)) {
         setCartItems(response.data);
